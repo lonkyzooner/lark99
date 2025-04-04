@@ -23,6 +23,7 @@
     "GROQ_API_MODEL": "llama3-70b-8192",
     "NEXT_PUBLIC_APP_URL": "@app-url",
     "NEXT_PUBLIC_LIVEKIT_URL": "@livekit-url",
-    "NEXT_PUBLIC_ENABLE_REAL_AUDIO": "false"
+    "NEXT_PUBLIC_ENABLE_REAL_AUDIO": "false",
+    "NEXT_PUBLIC_API_BASE_URL": "@app-url"
   }
 }

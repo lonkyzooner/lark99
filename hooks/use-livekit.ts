@@ -17,11 +17,14 @@ export function useLiveKit() {
 
     try {
       // Get LiveKit URL from environment variable
-      const livekitUrl = process.env.NEXT_PUBLIC_LIVEKIT_URL
+      let livekitUrl = process.env.NEXT_PUBLIC_LIVEKIT_URL
 
       if (!livekitUrl) {
-        console.error("LiveKit URL not configured")
-        throw new Error("LiveKit URL not configured")
+        console.warn("LiveKit URL not configured, using fallback")
+        // Use a fallback URL for development or testing
+        // In production, this should be properly configured in Vercel
+        livekitUrl = "wss://lark-livekit.livekit.cloud"
+        console.log(`Using fallback LiveKit URL: ${livekitUrl}`)
       }
 
       console.log("Connecting to LiveKit...")

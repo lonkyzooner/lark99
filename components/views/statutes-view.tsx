@@ -68,7 +68,7 @@ export function StatutesView({ isOffline, cachedData }: StatutesViewProps) {
 
     try {
       // Call the API to analyze the description and suggest applicable statutes
-      const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || ''}/api/statutes/suggest`, {
+      const response = await fetch(`/api/statutes/suggest`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

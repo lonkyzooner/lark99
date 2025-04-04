@@ -61,7 +61,13 @@ export class APIService implements ApiService {
   private isOffline: boolean = false
 
   private constructor() {
-    this.apiBaseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'
+    this.apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || process.env.NEXT_PUBLIC_APP_URL || ''
+
+    // If no base URL is provided, use relative URLs which will work on Vercel
+    if (!this.apiBaseUrl) {
+      console.warn('No API base URL provided, using relative URLs')
+      this.apiBaseUrl = ''
+    }
   }
 
   public static getInstance(): APIService {
