@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 10%;
+
+    --primary: 220 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 10% 90%;
+    --secondary-foreground: 220 10% 10%;
+
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 220 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
+    --ring: 220 100% 50%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 220 30% 10%;
+    --foreground: 220 10% 98%;
+
+    --card: 220 30% 13%;
+    --card-foreground: 220 10% 98%;
+
+    --popover: 220 30% 13%;
+    --popover-foreground: 220 10% 98%;
+
+    --primary: 220 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 30% 16%;
+    --secondary-foreground: 220 10% 98%;
+
+    --muted: 220 30% 16%;
+    --muted-foreground: 220 10% 70%;
+
+    --accent: 220 100% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 30% 16%;
+    --input: 220 30% 16%;
+    --ring: 220 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for the premium look */
+.glass-effect {
+  @apply bg-opacity-80 backdrop-blur-md border border-white/10;
+}
+
+.premium-card {
+  @apply bg-card shadow-lg border border-border/50 rounded-xl overflow-hidden transition-all duration-200;
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, hsl(220, 100%, 60%) 0%, hsl(260, 100%, 60%) 100%);
+}
+
+.text-gradient {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(135deg, hsl(220, 100%, 60%) 0%, hsl(260, 100%, 60%) 100%);
+}
+
+.audio-wave {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  gap: 2px;
+}
+
+.audio-wave .bar {
+  width: 2px;
+  border-radius: 2px;
+  background: hsl(var(--primary));
+  animation: audio-wave 0.5s ease-in-out infinite alternate;
+}
+
+.audio-wave .bar:nth-child(1) {
+  animation-delay: -0.4s;
+}
+.audio-wave .bar:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.audio-wave .bar:nth-child(3) {
+  animation-delay: -0.2s;
+}
+.audio-wave .bar:nth-child(4) {
+  animation-delay: -0.1s;
+}
+.audio-wave .bar:nth-child(5) {
+  animation-delay: 0s;
+}
+
+@keyframes audio-wave {
+  0% {
+    transform: scaleY(0.3);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tesla/Apple inspired focus styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-primary/50 ring-offset-2 ring-offset-background;
+}
+
+/* Improved button hover effects */
+.btn-premium {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.btn-premium::after {
+  content: "";
+  @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+}
+
+.btn-premium:hover::after {
+  @apply opacity-10;
+}
+
+/* Improved scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
