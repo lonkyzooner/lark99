@@ -10,20 +10,11 @@
     }
   ],
   "env": {
-    "OPENAI_API_KEY": "@openai-api-key",
     "OPENAI_API_MODEL": "gpt-4-turbo",
     "OPENAI_TTS_MODEL": "tts-1",
     "OPENAI_TTS_VOICE": "ash",
-    "LIVEKIT_API_KEY": "@livekit-api-key",
-    "LIVEKIT_API_SECRET": "@livekit-api-secret",
-    "LIVEKIT_URL": "@livekit-url",
-    "HUGGINGFACE_API_KEY": "@huggingface-api-key",
     "HUGGINGFACE_ENDPOINT": "https://api-inference.huggingface.co/models/",
-    "GROQ_API_KEY": "@groq-api-key",
     "GROQ_API_MODEL": "llama3-70b-8192",
-    "NEXT_PUBLIC_APP_URL": "@app-url",
-    "NEXT_PUBLIC_LIVEKIT_URL": "@livekit-url",
-    "NEXT_PUBLIC_ENABLE_REAL_AUDIO": "false",
-    "NEXT_PUBLIC_API_BASE_URL": "@app-url"
+    "NEXT_PUBLIC_ENABLE_REAL_AUDIO": "false"
   }
 }
